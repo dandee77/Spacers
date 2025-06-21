@@ -9,6 +9,7 @@ import {
   vec2Scale,
   vec2MoveTowards,
   vec2Length,
+  vec2AngleDeg,
 } from "../math/Vectors";
 
 export default function Game() {
@@ -16,14 +17,17 @@ export default function Game() {
   const [position, setPosition] = useState(
     vec2(window.innerWidth / 2, window.innerHeight / 2)
   );
+  const [rotation, setRotation] = useState(0);
+
   const positionRef = useRef(position);
   const velocityRef = useRef(vec2(0, 0));
   const mousePosRef = useRef(vec2(0, 0));
   const wPressedRef = useRef(false);
+  const rotationRef = useRef(0);
   const rafRef = useRef(0);
 
   /* ---------- constants you can tweak ---------- */
-  const MAX_SPEED = 10;
+  const MAX_SPEED = 5;
   const ACCEL_PER_FRAME = 0.5;
   const FRICTION = 0.9;
 
@@ -68,6 +72,14 @@ export default function Game() {
           velocityRef.current = vec2(0, 0);
       }
 
+      const dirToMouse = vec2Sub(mousePosRef.current, positionRef.current);
+      const angleDeg = vec2AngleDeg(dirToMouse);
+
+      if (Math.abs(angleDeg - rotationRef.current) > 0.5) {
+        rotationRef.current = angleDeg;
+        setRotation(angleDeg);
+      }
+
       if (velocityRef.current.x || velocityRef.current.y) {
         positionRef.current = vec2Add(positionRef.current, velocityRef.current);
         setPosition(positionRef.current);
@@ -82,12 +94,15 @@ export default function Game() {
 
   /* ---------- render ---------- */
   return (
-    <div className="w-full h-screen bg-black relative overflow-hidden">
+    <div className="w-full h-screen bg-blue-950 relative overflow-hidden">
       <div
-        className="w-10 h-10 rounded-full bg-yellow-400 absolute pointer-events-none"
+        className="w-15 h-15 bg-contain absolute pointer-events-none"
         style={{
+          backgroundImage: `url('/player-ship-texture.gif')`,
           left: position.x - 20 + "px",
           top: position.y - 20 + "px",
+          transform: `translate(-50%, -50%) rotate(${rotation + 84}deg)`, // ? +84 as of now as the player ship texture is not cetered properly
+          transformOrigin: "center center",
         }}
       />
       <p className="text-white absolute top-4 left-4">

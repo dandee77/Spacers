@@ -35,3 +35,7 @@ export function vec2MoveTowards(v, target, maxDistance) {
   const step = maxDistance / dist;
   return { x: v.x + dx * step, y: v.y + dy * step };
 }
+
+export function vec2AngleDeg(v) {
+  return (Math.atan2(v.y, v.x) * 180) / Math.PI;
+}
