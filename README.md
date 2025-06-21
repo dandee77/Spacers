@@ -1,12 +1,37 @@
-# React + Vite
+# 🚀 Retro Space Shooter Survival
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A classic 2D retro-style space shooter game built with **React** and **Tailwind CSS**.
 
-Currently, two official plugins are available:
+Blast through waves of enemies, dodge asteroids, and survive as long as you can in this fast-paced arcade survival game — all running inside your browser!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🕹 Features (Planned)
 
-## Expanding the ESLint configuration
+- Player spaceship that can move left/right and shoot lasers
+- Endless enemy waves that get harder over time
+- Score tracker and survival timer
+- Health system and game over screen
+- Retro-style visuals with pixel or vector graphics
+- Responsive design for desktop and mobile
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧰 Tech Stack
+
+- **React** – For building UI and game canvas
+- **Tailwind CSS** – For fast and flexible styling
+- **Vite** – Development build tool for fast loading
+
+## 📦 Setup
+
+Coming soon...
+
+## 🎯 Goals
+
+This project is a learning journey in:
+
+- Using React for interactive games
+- Styling with Tailwind CSS
+- Managing canvas or rendering inside a React component
+- Building and deploying a game on the web
+
+---
+
+> This game is a work-in-progress! More features and polish will be added as development continues.
