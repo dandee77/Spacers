@@ -1,4 +1,4 @@
-import { useGameState } from "../GameStateContext";
+import useGameState from "../UseGameState";
 import { GAME_STATES } from "../utils/utils";
 
 export default function Home() {

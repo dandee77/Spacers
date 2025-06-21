@@ -1,4 +1,4 @@
-import { useGameState } from "./GameStateContext";
+import useGameState from "./UseGameState";
 import Home from "./pages/home";
 import Game from "./pages/Game";
 import { GAME_STATES } from "./utils/utils";

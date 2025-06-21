@@ -1,4 +1,4 @@
-import { GameStateProvider } from "./GameStateContext";
+import GameStateProvider from "./GameStateProvider";
 import ScreenRouter from "./ScreenRouter";
 
 export default function App() {
