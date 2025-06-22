@@ -39,3 +39,8 @@ export function vec2MoveTowards(v, target, maxDistance) {
 export function vec2AngleDeg(v) {
   return (Math.atan2(v.y, v.x) * 180) / Math.PI;
 }
+
+export function vec2FromAngleDeg(angle) {
+  const rad = (angle * Math.PI) / 180;
+  return { x: Math.cos(rad), y: Math.sin(rad) };
+}
